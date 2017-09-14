@@ -29,7 +29,7 @@ void BluBrowser::OnContextInitialized() {
 #endif
 
   // BluHandler implements browser-level callbacks.
-  CefRefPtr<BluHandler> handler(new BluHandler());
+  CefRefPtr<BluHandler> bluHandler(new BluHandler());
 
   // Specify CEF browser settings here.
   CefBrowserSettings browser_settings;
@@ -47,7 +47,7 @@ void BluBrowser::OnContextInitialized() {
     url = "about:version";
 
   // Create the first browser window.
-  CefBrowserHost::CreateBrowser(window_info, handler.get(), url,
+  CefBrowserHost::CreateBrowser(window_info, bluHandler.get(), url,
                                 browser_settings, NULL);
 
 }
